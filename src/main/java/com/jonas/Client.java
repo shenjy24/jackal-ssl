@@ -52,6 +52,7 @@ public class Client {
             bos = new BufferedOutputStream(sslSocket.getOutputStream());
 
             bos.write("Hello".getBytes());
+            //使用AppOutputStream类进行发送
             bos.flush();
 
             byte[] buffer = new byte[20];

@@ -25,6 +25,7 @@ public class Server {
             SSLContext ctx = SSLContext.getInstance("SSL");
 
             KeyStore ks = KeyStore.getInstance("JKS");
+            //加载keystore中的条目以及进行密码校验
             ks.load(Server.class.getClassLoader().getResourceAsStream("kserver.keystore"), SERVER_KEY_STORE_PASSWORD.toCharArray());
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
             kmf.init(ks, SERVER_KEY_STORE_PASSWORD.toCharArray());
